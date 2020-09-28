@@ -5,7 +5,7 @@ Kenzie assignment: List1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Matthew Morris"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -26,8 +26,11 @@ __author__ = "???"
 
 
 def match_ends(words):
-    # your code here
-    return
+    count = 0
+    for i in words:
+        if len(i) >= 2 and i[-1] == i[0]:
+            count = count + 1
+    return count
 
 
 # B. front_x
@@ -42,8 +45,7 @@ def match_ends(words):
 
 
 def front_x(words):
-    # your code here
-    return
+    return sorted(words, key=lambda x: (not x.startswith('x'), x))
 
 
 # C. sort_last
@@ -56,8 +58,9 @@ def front_x(words):
 
 
 def sort_last(tuples):
-    # your code here
-    return
+    def ssort(s):
+        return s[-1]
+    return sorted(tuples, key=ssort)
 
 
 # Provided simple test() function used in main() to print
